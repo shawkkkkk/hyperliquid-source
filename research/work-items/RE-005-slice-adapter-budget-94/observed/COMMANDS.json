@@ -1,0 +1,51 @@
+[
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-I",
+      "-B",
+      "research/work-items/RE-005-slice-adapter-budget-94/verify.py",
+      "--out",
+      "/tmp/hl-resume-20261101/readers/work/outer-reviewed-experiment/case-check"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "33eb622bb587909685d1af59f55be479b5ce14c22a9e00a0612c8905b044c62a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "make",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "2bce4e007979e8a9c2afb7a3c8db3a0978054610e255cad04b2d31303eddf28c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "make",
+      "verify"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "62b2bc35db2b34337f2cb5feace2b03e4faee375be93a1f0c03e8eb04654bdfb",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "make",
+      "catalogue-check"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d154b53146de73afa6ac07cb86b790175fed3cf9eb764993fa92227491db6d80",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "make",
+      "reproduce"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "545deb0a87c0260e5b6be5ec631d455894c526e55c65a39189de19308ed6d56e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

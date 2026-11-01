@@ -1,0 +1,58 @@
+[
+  {
+    "compressed_bytes": 52916,
+    "compressed_sha256": "61c322e3f6a55be5e462bfe6fdf014ff20c8920c964eab5fe2d8053548ac9433",
+    "compression": "zlib",
+    "file": "slow-big-endian.jsonl.zlib",
+    "raw_bytes": 1327776,
+    "raw_sha256": "6883b6bb4871d28f9c9b5dc9df7363b2722bbac7e842e8baadea0fc3ca28328e"
+  },
+  {
+    "compressed_bytes": 52910,
+    "compressed_sha256": "7f645d63a20547f9e35792e289ec231b35483ddbd3a250eb7cd2bbb17a6686f9",
+    "compression": "zlib",
+    "file": "u64-fast-code-three.jsonl.zlib",
+    "raw_bytes": 1328724,
+    "raw_sha256": "1e7850178cdabdb4da8e9c69e2a162d52363700345b8301d38145132683ad27a"
+  },
+  {
+    "compressed_bytes": 52876,
+    "compressed_sha256": "60854b0f2396be6d7d5286deecf7856cc196a28099751e09ddb790981578e7cd",
+    "compression": "zlib",
+    "file": "fast-consumes-tag.jsonl.zlib",
+    "raw_bytes": 1325382,
+    "raw_sha256": "e5e08089056f97fbcf273870da1dafff2f99d20ad87aee0648c2705db736257e"
+  },
+  {
+    "compressed_bytes": 52949,
+    "compressed_sha256": "e17a9b9e64dce5c2ead1cb0319d794f5da3223c355f3f5a6d0ff2bffb503ed42",
+    "compression": "zlib",
+    "file": "limit-rollback.jsonl.zlib",
+    "raw_bytes": 1329184,
+    "raw_sha256": "e6cbb2e1b1d8ed5b734e5c5ca76ee32b07fc62f2a9dad803425735170830cb20"
+  },
+  {
+    "compressed_bytes": 52903,
+    "compressed_sha256": "b85b015521c2dbeb7f07839fe825ea0ecc0694728418864fc11b8b2145904293",
+    "compression": "zlib",
+    "file": "overflow-store.jsonl.zlib",
+    "raw_bytes": 1324324,
+    "raw_sha256": "fc58759a0a9a16e780dc606f7293b823093040431bab7ee767aeef0802b0dd60"
+  },
+  {
+    "compressed_bytes": 53026,
+    "compressed_sha256": "df2da506d09fabd23ed4d9091f687d6dccb095ee8afda1c3fb563b5848f34afd",
+    "compression": "zlib",
+    "file": "charge-one.jsonl.zlib",
+    "raw_bytes": 1330781,
+    "raw_sha256": "bcc74876825016684f4d2392aa13347dc16d4018f529f30c2795f91a77766195"
+  },
+  {
+    "compressed_bytes": 52435,
+    "compressed_sha256": "e3a5648dfb565ce0c7776f6b209c18a73c0cb56a67eaf9b71e6189093278e2e9",
+    "compression": "zlib",
+    "file": "mode-nonzero.jsonl.zlib",
+    "raw_bytes": 1305465,
+    "raw_sha256": "7786b4cad689d30b875e694712db10225039b627973db2e4e2ff55355c44461a"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "actual_review_sha256": "1dfb5e7704a71d3454608bce5b16923205196d6aa3ed1d0af611b5bde44678ee",
+  "all5_actual_commands_exit0_and_rawstream_hashes_verified": true,
+  "all7_decompressed_controls_equal_originals": true,
+  "all_manifest_hashes_verified": true,
+  "before_after_9176_input_audits_equal": true,
+  "blockers": [],
+  "claims": [
+    "new static outercounter/cursor question beyond accepted253 mapping and directReader1325 scope",
+    "472B142 primary rows;623B188 helper context counted separately",
+    "full native/fde/cie/table/rela/call checks +6716 pre-model equations",
+    "seven normal full-output mathematical mutants andseven actual below-digest structural rejections honestly separated",
+    "no Rust or machine-byte reconstruction/sourceenum/privateABI/fullgate credit",
+    "tag2 only on budget errors; inactive resultpadding excluded",
+    "task-start base3324/C1a6b3 actual checks explicitly qualified; later main d3af/1325 merge acknowledged",
+    "root rights/notices/progress/byte registry identical to task-start base",
+    "no captured execution/evaluator/full expanded suite/hostedCI claims",
+    "new independently authored MIT static proof/tooling; no copied external1325source"
+  ],
+  "compressed_control_bytes": 370015,
+  "created_utc": "2026-11-01T17:03:27.676191+00:00",
+  "lossless_control_files": 7,
+  "no_extra_native_or_test_execution_by_peer": true,
+  "original_control_bytes": 9271636,
+  "proposed_body_sha256": "150a1cc634519ac76be5c1838582dac56fcb45bc6f9295017b046377693852d4",
+  "publication_scope": "Root owns final current-main publication safety; no extra user gate implied",
+  "reviewed_bytes": 9797140,
+  "reviewed_files": 53,
+  "reviewed_manifest_sha256": "a634aa4d8863fa436950d961c2034227007ab34d9f369c58ae8114b1e4a8846a",
+  "scoped_case_report_sha256": "b7488b281e04544666412d93b977b4ec3bf3ca64574a76eaf3c01c2178515c3d",
+  "status": "FINAL_OUTER472_PACKET_SCOPE_RIGHTS_AND_CLAIMS_PASS"
+}

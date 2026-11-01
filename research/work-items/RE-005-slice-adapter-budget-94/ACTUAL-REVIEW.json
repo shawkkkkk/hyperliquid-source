@@ -1,0 +1,117 @@
+{
+  "actual_expected_sha256": "d50536c89dec92e34fa88bdf826dbfeeda050dc6196627b16496121dfc107f14",
+  "all_actual_rows_equal_independent_frozen_bytes": true,
+  "all_seven_math_mutants_full_normal_rows": true,
+  "audit_sha256": "0b62800559d30b156b1709f987b1cd845c7249523655bf36aa0e113e436f337a",
+  "before_after_audit_equal": true,
+  "blockers": [],
+  "cases": 6716,
+  "checker_pre_run_go_sha256": "46528ab475a3257a9ba804ee275e3756bfb81e1f84ad5ca02a81831dad417535",
+  "component_gates_advanced": false,
+  "created_utc": "2026-11-01T16:53:05.185753+00:00",
+  "full_expanded_suite": "NOT_RUN",
+  "math_mutants": [
+    {
+      "actual_sha256": "7786b4cad689d30b875e694712db10225039b627973db2e4e2ff55355c44461a",
+      "mismatches": 3240,
+      "mutation": "mode-nonzero",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "bcc74876825016684f4d2392aa13347dc16d4018f529f30c2795f91a77766195",
+      "mismatches": 1134,
+      "mutation": "charge-one",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "fc58759a0a9a16e780dc606f7293b823093040431bab7ee767aeef0802b0dd60",
+      "mismatches": 220,
+      "mutation": "overflow-store",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "e6cbb2e1b1d8ed5b734e5c5ca76ee32b07fc62f2a9dad803425735170830cb20",
+      "mismatches": 560,
+      "mutation": "limit-rollback",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "e5e08089056f97fbcf273870da1dafff2f99d20ad87aee0648c2705db736257e",
+      "mismatches": 1204,
+      "mutation": "fast-consumes-tag",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "1e7850178cdabdb4da8e9c69e2a162d52363700345b8301d38145132683ad27a",
+      "mismatches": 472,
+      "mutation": "u64-fast-code-three",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "6883b6bb4871d28f9c9b5dc9df7363b2722bbac7e842e8baadea0fc3ca28328e",
+      "mismatches": 717,
+      "mutation": "slow-big-endian",
+      "rows": 6716
+    }
+  ],
+  "native_rejection_scope": "Changed actual instruction/FDE/table bytes rejected below whole-file digest check; mutated captures never executed or evaluated. No counterfactual runtime behavior claimed.",
+  "native_structural_rejections": [
+    {
+      "changed": "00",
+      "name": "mode",
+      "original": "01",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc13"
+    },
+    {
+      "changed": "fa",
+      "name": "overflow-threshold",
+      "original": "fb",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc1d"
+    },
+    {
+      "changed": "49",
+      "name": "counter-store",
+      "original": "48",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc28"
+    },
+    {
+      "changed": "30",
+      "name": "slow-endian",
+      "original": "31",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bcae"
+    },
+    {
+      "changed": "03",
+      "name": "fast-error-code",
+      "original": "02",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bdc9"
+    },
+    {
+      "changed": "e0",
+      "name": "jump-table",
+      "original": "e1",
+      "rejected": "relative jump table changed",
+      "va": "0x6f6e98"
+    },
+    {
+      "changed": "f2",
+      "name": "FDE",
+      "original": "f3",
+      "rejected": "FDE changed",
+      "va": "0xef1e80"
+    }
+  ],
+  "no_Rust_or_target_or_PC_register_evaluator": true,
+  "observed_commands": 5,
+  "physical_input_count": 9176,
+  "primary_bytes": 472,
+  "primary_rows": 142,
+  "report_sha256": "b7488b281e04544666412d93b977b4ec3bf3ca64574a76eaf3c01c2178515c3d",
+  "separate_helper_context_bytes": 623,
+  "status": "OUTER472_ACTUAL_STATIC_MATH_AND_CONTROLS_PASS_PENDING_PUBLIC_PACKET"
+}

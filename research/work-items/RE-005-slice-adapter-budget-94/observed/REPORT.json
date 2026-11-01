@@ -1,0 +1,208 @@
+{
+  "Reader_context_calls": [
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466d93a"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466d952"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466d96a"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466da99"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466dab1"
+    }
+  ],
+  "Rust_implementation_claimed": false,
+  "actual_sha256": "d50536c89dec92e34fa88bdf826dbfeeda050dc6196627b16496121dfc107f14",
+  "cases": 6716,
+  "exact_rows": 6716,
+  "full_repository_suite": "NOT_RUN: current expanded suite not authorized",
+  "helper_context_bytes": 623,
+  "helper_receipt_sha256": "a8ecd49f000a9156f8d8b5380610bf037fc133f62c5d56efc0f39868e1841ede",
+  "math_corruption_controls": [
+    {
+      "actual_sha256": "7786b4cad689d30b875e694712db10225039b627973db2e4e2ff55355c44461a",
+      "first_case": "a01080",
+      "mismatches": 3240,
+      "mutation": "mode-nonzero",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "bcc74876825016684f4d2392aa13347dc16d4018f529f30c2795f91a77766195",
+      "first_case": "a00540",
+      "mismatches": 1134,
+      "mutation": "charge-one",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "fc58759a0a9a16e780dc606f7293b823093040431bab7ee767aeef0802b0dd60",
+      "first_case": "a00970",
+      "mismatches": 220,
+      "mutation": "overflow-store",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "e6cbb2e1b1d8ed5b734e5c5ca76ee32b07fc62f2a9dad803425735170830cb20",
+      "first_case": "a00540",
+      "mismatches": 560,
+      "mutation": "limit-rollback",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "e5e08089056f97fbcf273870da1dafff2f99d20ad87aee0648c2705db736257e",
+      "first_case": "a00005",
+      "mismatches": 1204,
+      "mutation": "fast-consumes-tag",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "1e7850178cdabdb4da8e9c69e2a162d52363700345b8301d38145132683ad27a",
+      "first_case": "a02708",
+      "mismatches": 472,
+      "mutation": "u64-fast-code-three",
+      "rows": 6716
+    },
+    {
+      "actual_sha256": "6883b6bb4871d28f9c9b5dc9df7363b2722bbac7e842e8baadea0fc3ca28328e",
+      "first_case": "a00003",
+      "mismatches": 717,
+      "mutation": "slow-big-endian",
+      "rows": 6716
+    }
+  ],
+  "native_execution_or_evaluator": false,
+  "native_receipt_sha256": "7848bfb0cfdcf4273d1904abaecb82607ac7f0e39528d7495aceabadbd0a0e0e",
+  "native_structural_controls": [
+    {
+      "changed": "00",
+      "name": "mode",
+      "original": "01",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc13"
+    },
+    {
+      "changed": "fa",
+      "name": "overflow-threshold",
+      "original": "fb",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc1d"
+    },
+    {
+      "changed": "49",
+      "name": "counter-store",
+      "original": "48",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bc28"
+    },
+    {
+      "changed": "30",
+      "name": "slow-endian",
+      "original": "31",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bcae"
+    },
+    {
+      "changed": "03",
+      "name": "fast-error-code",
+      "original": "02",
+      "rejected": "complete function bytes changed",
+      "va": "0x466bdc9"
+    },
+    {
+      "changed": "e0",
+      "name": "jump-table",
+      "original": "e1",
+      "rejected": "relative jump table changed",
+      "va": "0x6f6e98"
+    },
+    {
+      "changed": "f2",
+      "name": "FDE",
+      "original": "f3",
+      "rejected": "FDE changed",
+      "va": "0xef1e80"
+    }
+  ],
+  "outer_calls": [
+    {
+      "slot": "0x5775138",
+      "target": "0x466d850",
+      "va": "0x466bcb0"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466bcc8"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466bce0"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466bcf8"
+    },
+    {
+      "slot": "0x57745e0",
+      "target": "0x466d980",
+      "va": "0x466bdba"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466bdd2"
+    },
+    {
+      "slot": "0x57745e8",
+      "target": "0x466dac0",
+      "va": "0x466bdea"
+    }
+  ],
+  "parameters": {
+    "32": {
+      "charge": 4,
+      "charged_mode": 1,
+      "fast_remaining_gt": 4,
+      "overflow_threshold": 18446744073709551611
+    },
+    "64": {
+      "charge": 8,
+      "charged_mode": 1,
+      "fast_remaining_gt": 8,
+      "overflow_threshold": 18446744073709551607
+    }
+  },
+  "path_counts": {
+    "counter-overflow": 220,
+    "fast": 2257,
+    "over-limit-after-store": 560,
+    "slow-forced-little": 3679
+  },
+  "pre_model_freeze_sha256": "0f8cbac0cdb676458cbf71e373a60c5123fe0d1418a300a1063ce4dab9b85eb8",
+  "primary_bytes": 472,
+  "primary_rows": 142,
+  "result_tag_counts": {
+    "0": 964,
+    "2": 780,
+    "3": 2176,
+    "18": 2796
+  },
+  "schema": 1,
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f"
+}
