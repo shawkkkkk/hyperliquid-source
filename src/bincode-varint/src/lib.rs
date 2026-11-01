@@ -1,7 +1,7 @@
 //! Independently authored reconstruction of the node #94 integer-varint core.
 //!
 //! The encode and size operations cover the observed u32/u64 paths. Decoding
-//! is intentionally restricted to the evidence-backed u64 slice fast path.
+//! covers the u64 slice fast path and the separate u32/u64 Reader operations.
 
 #![forbid(unsafe_code)]
 
@@ -58,6 +58,38 @@ impl fmt::Display for DecodeError {
 }
 
 impl std::error::Error for DecodeError {}
+
+/// Logical errors from the node #94 u32/u64 Reader operations.
+///
+/// These names and the safe Rust representation are chosen for this API.
+/// The numeric type codes are retained as observed, without asserting the
+/// target's source enum, result layout, or padding.
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub enum ReaderError {
+    /// The input lacks this many bytes for the selected operation.
+    UnexpectedEnd { additional: usize },
+    /// The marker reaches the shared raw-code error builder.
+    RejectedMarker { expected_code: u8, found_code: u8 },
+}
+
+impl fmt::Display for ReaderError {
+    fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::UnexpectedEnd { additional } => {
+                write!(formatter, "Reader needs {additional} additional bytes")
+            }
+            Self::RejectedMarker {
+                expected_code,
+                found_code,
+            } => write!(
+                formatter,
+                "Reader rejects integer type code {found_code}; expected code {expected_code}"
+            ),
+        }
+    }
+}
+
+impl std::error::Error for ReaderError {}
 
 /// Returns the observed encoded length for a u32 value.
 #[must_use]
@@ -129,7 +161,7 @@ pub fn encode_u64(value: u64, order: PayloadOrder, output: &mut Vec<u8>) -> usiz
 ///
 /// The target enters this path only when more than eight bytes remain. Shorter
 /// inputs are returned as [`DecodeError::FastPathUnavailable`] without reading
-/// their tag because the separate reader slow path is unresolved.
+/// their tag. Use [`decode_u64_reader`] for the separate Reader operation.
 pub fn decode_u64_slice_fast(input: &[u8]) -> Result<DecodedU64, DecodeError> {
     if input.len() < FAST_PATH_MINIMUM_REMAINING {
         return Err(DecodeError::FastPathUnavailable {
@@ -161,6 +193,108 @@ pub fn decode_u64_slice_fast(input: &[u8]) -> Result<DecodedU64, DecodeError> {
     };
 
     Ok(decoded)
+}
+
+/// Decodes the node #94 u32 Reader operation and advances the borrowed slice.
+///
+/// An empty slice returns `UnexpectedEnd { additional: 1 }` without advancing.
+/// Otherwise the tag is consumed before any error: a short payload and a
+/// rejected marker leave all payload bytes available in `input`. Successful
+/// payload reads consume their full 3- or 5-byte representation. Nonminimal
+/// representations are accepted. `byte_order_flag == 0` selects little-endian;
+/// every nonzero flag selects big-endian, matching the target's raw `dl` test.
+///
+/// This is a logical result/cursor API, not a reconstruction of target ABI or
+/// outer slice-decoder budget accounting.
+pub fn decode_u32_reader(input: &mut &[u8], byte_order_flag: u8) -> Result<u32, ReaderError> {
+    match take_reader_tag(input)? {
+        tag @ 0..=0xfa => Ok(u32::from(tag)),
+        U16_MARKER => {
+            let bytes = take_reader_payload(input)?;
+            Ok(u32::from(if byte_order_flag == 0 {
+                u16::from_le_bytes(bytes)
+            } else {
+                u16::from_be_bytes(bytes)
+            }))
+        }
+        U32_MARKER => {
+            let bytes = take_reader_payload(input)?;
+            Ok(if byte_order_flag == 0 {
+                u32::from_le_bytes(bytes)
+            } else {
+                u32::from_be_bytes(bytes)
+            })
+        }
+        U64_MARKER => Err(reader_marker_error(2, 3)),
+        U128_MARKER => Err(reader_marker_error(2, 4)),
+        0xff => Err(reader_marker_error(2, 12)),
+    }
+}
+
+/// Decodes the node #94 u64 Reader operation and advances the borrowed slice.
+///
+/// Cursor and byte-order rules are the same as [`decode_u32_reader`]. Marker
+/// `0xfd` reads eight payload bytes, consuming nine bytes on success. Markers
+/// `0xfe` and `0xff` return raw expected code 3 with found code 4 or 12 after
+/// consuming only their tag. No u128 payload is read.
+pub fn decode_u64_reader(input: &mut &[u8], byte_order_flag: u8) -> Result<u64, ReaderError> {
+    match take_reader_tag(input)? {
+        tag @ 0..=0xfa => Ok(u64::from(tag)),
+        U16_MARKER => {
+            let bytes = take_reader_payload(input)?;
+            Ok(u64::from(if byte_order_flag == 0 {
+                u16::from_le_bytes(bytes)
+            } else {
+                u16::from_be_bytes(bytes)
+            }))
+        }
+        U32_MARKER => {
+            let bytes = take_reader_payload(input)?;
+            Ok(u64::from(if byte_order_flag == 0 {
+                u32::from_le_bytes(bytes)
+            } else {
+                u32::from_be_bytes(bytes)
+            }))
+        }
+        U64_MARKER => {
+            let bytes = take_reader_payload(input)?;
+            Ok(if byte_order_flag == 0 {
+                u64::from_le_bytes(bytes)
+            } else {
+                u64::from_be_bytes(bytes)
+            })
+        }
+        U128_MARKER => Err(reader_marker_error(3, 4)),
+        0xff => Err(reader_marker_error(3, 12)),
+    }
+}
+
+fn take_reader_tag(input: &mut &[u8]) -> Result<u8, ReaderError> {
+    let Some((&tag, tail)) = input.split_first() else {
+        return Err(ReaderError::UnexpectedEnd { additional: 1 });
+    };
+    *input = tail;
+    Ok(tag)
+}
+
+fn take_reader_payload<const WIDTH: usize>(input: &mut &[u8]) -> Result<[u8; WIDTH], ReaderError> {
+    if input.len() < WIDTH {
+        return Err(ReaderError::UnexpectedEnd {
+            additional: WIDTH - input.len(),
+        });
+    }
+    let (payload, tail) = input.split_at(WIDTH);
+    let mut bytes = [0; WIDTH];
+    bytes.copy_from_slice(payload);
+    *input = tail;
+    Ok(bytes)
+}
+
+fn reader_marker_error(expected_code: u8, found_code: u8) -> ReaderError {
+    ReaderError::RejectedMarker {
+        expected_code,
+        found_code,
+    }
 }
 
 fn append_u16(value: u16, order: PayloadOrder, output: &mut Vec<u8>) {

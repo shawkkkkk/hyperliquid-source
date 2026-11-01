@@ -31,27 +31,56 @@ The encode bodies conditionally byte-swap each multibyte payload. The Rust API
 therefore exposes explicit little- and big-endian payload order. Marker bytes
 do not change with payload order. The size operation is order-independent.
 
-Only the little-endian u64 *slice fast path* is qualified for decoding. It is
+The little-endian u64 *slice fast path* is
 entered only when `input.len() > 8`. It accepts tags below `0xfb`, reads u16,
 u32 or u64 payloads for `0xfb`, `0xfc` or `0xfd`, and reports 1, 3, 5 or 9
 consumed bytes. The observed straight-line arms perform no minimal-encoding
 check, so non-minimal representations are accepted on this path. Markers
 `0xfe` and `0xff` reach distinct target error construction paths; this
 component reports both as rejected without assigning an unproved target error
-type.
+type. The separate Reader API below retains the raw Reader error codes.
+
+## u32 and u64 Reader operations
+
+`decode_u32_reader` and `decode_u64_reader` implement the complete operations at
+node #94 virtual addresses `0x466d850..0x466d975` (293 bytes) and
+`0x466d980..0x466dabc` (316 bytes), with the shared 14-byte raw-code error
+builder at `0x466dac0..0x466dace`. The static packet
+`research/work-items/RE-005-bincode-slow-widths/` and the new reconstruction
+packet `research/work-items/RE-005-reader-reconstruction-94/` bind the scope to
+the target digest above. All three ranges total 623 bytes and 188 instruction
+rows; this is a bounded semantic reconstruction, with no compiled-byte match
+claimed.
+
+Both functions take `&mut &[u8]` and a raw byte-order flag. Flag zero selects
+little-endian; every nonzero byte selects big-endian. The mutable slice exposes
+the observed cursor transition on success and error:
+
+- Empty input needs one additional byte and consumes none.
+- A present tag is consumed immediately. Tags below `0xfb` return their value.
+- Marker `0xfb` needs three original bytes; `0xfc` needs five. The u64 Reader
+  also accepts `0xfd`, requiring nine. A short payload reports the total
+  required minus the original length and leaves the payload unconsumed.
+- A successful payload read consumes its full representation. Wider encodings
+  of small values are accepted.
+- The u32 Reader rejects `0xfd`, `0xfe`, and `0xff`, with raw expected code 2
+  and found codes 3, 4, and 12. The u64 Reader rejects `0xfe` and `0xff`, with
+  raw expected code 3 and found codes 4 and 12. Rejection consumes only the tag.
+
+`ReaderError` is a chosen safe API representation. Its names do not assert a
+recovered target enum, result layout, ABI, or padding. The logical target result
+tags observed are 18 (success), 0 (short input), and 3 (raw-code error).
+
+The existing `decode_u64_slice_fast` entrypoint still returns
+`FastPathUnavailable` when eight bytes or fewer remain. It continues to model
+only the separate fast-path contract. Outer decoder budget accounting and its
+different raw error codes remain outside this Reader reconstruction.
 
 ## Deliberately unsupported behavior
 
-When eight bytes or fewer remain, the target branches to a reader-based slow
-path whose semantics are not established by the retained evidence. The Rust
-decoder returns `FastPathUnavailable` before reading a tag in that case. This
-includes empty and apparently truncated inputs: classifying them as EOF,
-truncation or another target error would extend the claim beyond the binary
-evidence.
-
-The component does not implement u16/u32 decoding, u128 or signed/zigzag
-encoding, fixed-width mode, serde integration, the reader slow path, target
-error enum values, or caller/type mappings. It makes no binary-identity or
+The component does not implement a standalone u16 decoder, u128 or signed/zigzag
+encoding, fixed-width mode, serde integration, the complete outer slice decoder,
+target error enum values, or caller/type mappings. It makes no binary-identity or
 full-serialization-recovery claim and does not advance a progress gate.
 
 ## Intended API and build scope
@@ -62,7 +91,8 @@ root workspace. Its public surface is limited to:
 - `encoded_len_u32` and `encoded_len_u64`;
 - `encode_u32` and `encode_u64`, appending to a caller-owned `Vec<u8>`;
 - `decode_u64_slice_fast`, returning the decoded value and consumed length;
-- explicit `PayloadOrder` and `DecodeError` types.
+- `decode_u32_reader` and `decode_u64_reader`, updating a caller-owned slice;
+- explicit `PayloadOrder`, `DecodeError`, and `ReaderError` types.
 
 The crate uses the repository-pinned Rust toolchain. Once the implementation
 is present, build it from the repository root with:
@@ -91,3 +121,19 @@ following independently verified node #94 instructions:
 
 `research/work-items/RE-005-bincode-varint/verify.py` authenticates those bytes
 against the captured artifact before the Rust test results are interpreted.
+
+The Reader bridge at `examples/reader_oracle.rs` reads tab-separated
+`WIDTH`, `RAW_DL`, and `INPUT_HEX` fields from stdin, where width is 32 or 64
+and the flag is a decimal byte. Empty hex input is allowed. It emits one of:
+
+```text
+ok<TAB>VALUE<TAB>CONSUMED<TAB>REMAINING<TAB>TAIL_HEX
+end<TAB>ADDITIONAL<TAB>CONSUMED<TAB>REMAINING<TAB>TAIL_HEX
+type<TAB>EXPECTED<TAB>FOUND<TAB>CONSUMED<TAB>REMAINING<TAB>TAIL_HEX
+```
+
+Numbers are decimal and `TAIL_HEX` is lowercase, including an empty final field
+for an empty tail. The bridge executes the reconstructed Rust only. Its
+8,364-case mathematical corpus was frozen independently before these Reader
+functions were authored; the reconstruction packet retains its inputs,
+expectations, generator, hashes, actual comparisons, and limitations.
