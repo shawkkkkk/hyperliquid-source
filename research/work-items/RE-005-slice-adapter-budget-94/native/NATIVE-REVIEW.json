@@ -1,0 +1,91 @@
+{
+  "PR1325_distinction": "1325 explicitly exposes direct Reader operations and excludes wrapper selection/budget state; current body scope623B excludes these472B",
+  "created_utc": "2026-11-01T16:37:12.491329+00:00",
+  "functions": [
+    {
+      "FDE": {
+        "end": 73841923,
+        "raw": "3400000060092100949d7703f300000000410e108302670e08410e10026d0e08410e10530e08410e10570e08410e10570e08410e10570e08",
+        "va": 15670900
+      },
+      "argv": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386:x86-64",
+        "-M",
+        "intel",
+        "--insn-width=16",
+        "--adjust-vma=0x466bc10",
+        "/tmp/hl-resume-20261101/source-peer/outer-adapters/u32-outer.raw"
+      ],
+      "body_sha256": "9e1325517b785daba397193914a99a3c119b1b7dc9603cda4df553c46f0485a8",
+      "bytes": 243,
+      "end": "0x466bd03",
+      "name": "u32-outer",
+      "objdump_sha256": "ae336de86c9bb0cdb6482495829657445685f27573102e0e1517159830857cea",
+      "rows": 73,
+      "start": "0x466bc10",
+      "stderr_bytes": 0
+    },
+    {
+      "FDE": {
+        "end": 73842165,
+        "raw": "30000000980921005c9e7703e500000000410e108302670e08410e1002770e08410e10530e08410e10570e08410e10570e080000",
+        "va": 15670956
+      },
+      "argv": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386:x86-64",
+        "-M",
+        "intel",
+        "--insn-width=16",
+        "--adjust-vma=0x466bd10",
+        "/tmp/hl-resume-20261101/source-peer/outer-adapters/u64-outer.raw"
+      ],
+      "body_sha256": "fca33a99b93d22ee7cde15b995c1faf05b6fc7f4967c1489ecaf77030d0f6f5e",
+      "bytes": 229,
+      "end": "0x466bdf5",
+      "name": "u64-outer",
+      "objdump_sha256": "cc8c03cea3d16f0b3fadf6969f6ab420da69d619ce568aba2117024cc2ddd38b",
+      "rows": 69,
+      "start": "0x466bd10",
+      "stderr_bytes": 0
+    }
+  ],
+  "native_execution_or_evaluator": false,
+  "repository_modules_imported": false,
+  "status": "FRESH_COMPLETE_OUTER472B_NATIVE_AND_BOUNDARY_REVIEW",
+  "tables": {
+    "u32": {
+      "raw": "e14df703ed4df7033b4ef703234ef703",
+      "targets": [
+        "0x466bc79",
+        "0x466bc85",
+        "0x466bcd3",
+        "0x466bcbb"
+      ],
+      "va": "0x6f6e98"
+    },
+    "u64": {
+      "raw": "ce4ef703e64ef703da4ef7031d4ff703",
+      "targets": [
+        "0x466bd76",
+        "0x466bd8e",
+        "0x466bd82",
+        "0x466bdc5"
+      ],
+      "va": "0x6f6ea8"
+    }
+  },
+  "target_bytes": 91774280,
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "total_bytes": 472,
+  "total_rows": 142
+}

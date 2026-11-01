@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f",
+  "target_bytes": 91774280,
+  "source_head": "3324e50333042b391312515e542279ca21f63dc8",
+  "status": "",
+  "primary": [
+    {
+      "name": "u32-outer",
+      "start": "0x466bc10",
+      "end": "0x466bd03",
+      "file_offset": "0x466ac10",
+      "bytes": 243,
+      "rows": 73,
+      "body_sha256": "9e1325517b785daba397193914a99a3c119b1b7dc9603cda4df553c46f0485a8",
+      "FDE_VA": "0xef1e74",
+      "CIE_VA": "0xce1518",
+      "calls": [
+        {
+          "va": "0x466bcb0",
+          "slot": "0x5775138",
+          "target": "0x466d850"
+        },
+        {
+          "va": "0x466bcc8",
+          "slot": "0x57745e8",
+          "target": "0x466dac0"
+        },
+        {
+          "va": "0x466bce0",
+          "slot": "0x57745e8",
+          "target": "0x466dac0"
+        },
+        {
+          "va": "0x466bcf8",
+          "slot": "0x57745e8",
+          "target": "0x466dac0"
+        }
+      ]
+    },
+    {
+      "name": "u64-outer",
+      "start": "0x466bd10",
+      "end": "0x466bdf5",
+      "file_offset": "0x466ad10",
+      "bytes": 229,
+      "rows": 69,
+      "body_sha256": "fca33a99b93d22ee7cde15b995c1faf05b6fc7f4967c1489ecaf77030d0f6f5e",
+      "FDE_VA": "0xef1eac",
+      "CIE_VA": "0xce1518",
+      "calls": [
+        {
+          "va": "0x466bdba",
+          "slot": "0x57745e0",
+          "target": "0x466d980"
+        },
+        {
+          "va": "0x466bdd2",
+          "slot": "0x57745e8",
+          "target": "0x466dac0"
+        },
+        {
+          "va": "0x466bdea",
+          "slot": "0x57745e8",
+          "target": "0x466dac0"
+        }
+      ]
+    }
+  ],
+  "primary_bytes": 472,
+  "primary_rows": 142,
+  "helper_bytes": 623,
+  "helper_relocations": 3,
+  "tables": {
+    "u32": {
+      "raw": "e14df703ed4df7033b4ef703234ef703",
+      "targets": [
+        "0x466bc79",
+        "0x466bc85",
+        "0x466bcd3",
+        "0x466bcbb"
+      ],
+      "va": "0x6f6e98"
+    },
+    "u64": {
+      "raw": "ce4ef703e64ef703da4ef7031d4ff703",
+      "targets": [
+        "0x466bd76",
+        "0x466bd8e",
+        "0x466bd82",
+        "0x466bdc5"
+      ],
+      "va": "0x6f6ea8"
+    }
+  },
+  "native_execution_or_evaluator": false,
+  "status_result": "PASS_FRESH_STATIC_PRIMARY_AND_HELPER_ADMISSION"
+}

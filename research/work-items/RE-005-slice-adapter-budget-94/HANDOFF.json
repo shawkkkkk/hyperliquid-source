@@ -1,0 +1,20 @@
+{
+  "all_complete_inputs_distinct_even_without_ID_pointer": true,
+  "cases": 6716,
+  "component_gates_advanced": false,
+  "created_utc": "2026-11-01T16:41:42.046019+00:00",
+  "files": {
+    "FREEZE.json": "0f8cbac0cdb676458cbf71e373a60c5123fe0d1418a300a1063ce4dab9b85eb8",
+    "NATIVE-REVIEW.json": "7848bfb0cfdcf4273d1904abaecb82607ac7f0e39528d7495aceabadbd0a0e0e",
+    "PROOF.md": "af52027344e833b108048b0ec0f46afaf83056f61ab0caced49561b2e3355ccc",
+    "authority.json": "699eb020aa2230b82e43b450d0c9b01db6012e2ab5a61b5f80855756f58736bf",
+    "expected.jsonl": "d50536c89dec92e34fa88bdf826dbfeeda050dc6196627b16496121dfc107f14",
+    "freeze.py": "ecd0b734538c451c170f04a94697a8687b8973f50fa5266455205efe9fc38752",
+    "inputs.tsv": "9d392b8dd2b1737622adc03f57d444250d24e2ea20c5950c8154cbe25a35c217"
+  },
+  "new_checker_Rust_read_or_executed": false,
+  "primary_bytes": 472,
+  "primary_rows": 142,
+  "scope": "Static native counter/cursor/result state relation only; not a duplicate Reader Rust implementation",
+  "status": "FRESH_NATIVE_FULL_STATE_PROOF_AND_PRE_MODEL_CORPUS_READY"
+}

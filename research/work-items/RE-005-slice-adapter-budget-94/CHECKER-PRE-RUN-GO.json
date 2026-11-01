@@ -1,0 +1,22 @@
+{
+  "blockers": [],
+  "checker_sha256": "b1a7769526c18a80a365fd3f80c55e8307c0e3e40409aca22e245aeca90880d2",
+  "created_utc": "2026-11-01T16:46:23.608879+00:00",
+  "execution_scope": "Reviewed standalone checker and its math/structural controls; root owns any heavy-job sequencing, full expanded suite remains NOT_RUN",
+  "independent_handoff_sha256": "127fa2376eb6d9db538f8ee26fd72c79c69d228be6f3985dc5a23c3afd8c3cef",
+  "peer_execution_of_checker": false,
+  "review": [
+    "full immutable target size/hash before ordinary analysis",
+    "complete472B142 primary rows + separate623B188 helper bytes/FDE/CIE/listing tilings",
+    "two primary + two helper actual jump tables and3actual RELA records",
+    "all7primarycalls and5Readererrorbuildercalls staticallyclosed",
+    "actual mode/charge/overflowthreshold/fastlength immediates extracted only after rawbody qualification",
+    "case equations independently agree with frozen6716rows; source is mathematical partition, notPC/register/opcode evaluator",
+    "fixedcountermode exact1, overflowbeforestore, retainedoverlimitstore, forcedLEslow, fast errorconsumption0 andu64code2 versus slow3",
+    "input-onlycases and separate expectedJSON with exactfields/fulltail",
+    "7mathematicalmutants preservecomplete denominator and7actualnativebyte/FDE/table changes rejected belowfullfiledigest gate",
+    "no subprocess, reconstructedRust, targetexecution, network or importedrepository module in checker"
+  ],
+  "scope": "New bounded static outercounter/cursor state finding; no duplicate directReaderRust and no wholecomponentgate",
+  "status": "OUTER472_STATIC_CHECKER_PRE_RUN_GO"
+}

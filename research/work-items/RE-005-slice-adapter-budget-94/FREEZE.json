@@ -1,0 +1,59 @@
+{
+  "PC_register_evaluator": false,
+  "basis": "Fresh full native outer472B plus accepted253 and independently freshly authenticated623B Reader/helper relation",
+  "cases": 6716,
+  "chosen_projection": "Valid separated state/buffer and ordinary helper returns. Pointer is a nonwrapping numeric observation label; result payload padding/privateABI excluded.",
+  "created_utc": "2026-11-01T16:39:09.256753+00:00",
+  "distinct_complete_inputs": 6716,
+  "distinct_without_pointer_or_ID": 6716,
+  "families": {
+    "all-tags-fast-and-slow": 1008,
+    "counter-mode-limit-boundaries": 5400,
+    "critical-tags-all-lengths": 308
+  },
+  "files": {
+    "authority.json": {
+      "bytes": 3633475,
+      "sha256": "699eb020aa2230b82e43b450d0c9b01db6012e2ab5a61b5f80855756f58736bf"
+    },
+    "expected.jsonl": {
+      "bytes": 1328724,
+      "sha256": "d50536c89dec92e34fa88bdf826dbfeeda050dc6196627b16496121dfc107f14"
+    },
+    "freeze.py": {
+      "bytes": 6451,
+      "sha256": "ecd0b734538c451c170f04a94697a8687b8973f50fa5266455205efe9fc38752"
+    },
+    "inputs.tsv": {
+      "bytes": 364778,
+      "sha256": "9d392b8dd2b1737622adc03f57d444250d24e2ea20c5950c8154cbe25a35c217"
+    }
+  },
+  "native_review_sha256": "7848bfb0cfdcf4273d1904abaecb82607ac7f0e39528d7495aceabadbd0a0e0e",
+  "new_model_or_Rust_read": false,
+  "path_counts": {
+    "counter-overflow": 220,
+    "fast": 2257,
+    "over-limit-after-store": 560,
+    "slow-forced-little": 3679
+  },
+  "primary_bytes": 472,
+  "primary_rows": 142,
+  "repository_imports": false,
+  "result_tag_counts": {
+    "0": 964,
+    "18": 2796,
+    "2": 780,
+    "3": 2176
+  },
+  "schema": "outer472-independent-pre-model-freeze/1",
+  "scope_exclusions": [
+    "Original struct or ABI identity",
+    "Captured execution",
+    "Whole serialization component gates",
+    "Direct Reader Rust implementation already covered by1325",
+    "Budget result payload other than observed tag2"
+  ],
+  "target_execution": false,
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f"
+}
