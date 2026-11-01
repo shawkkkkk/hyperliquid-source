@@ -14,7 +14,7 @@ verify:
 	$(PYTHON) tools/artifacts.py verify
 	$(PYTHON) tools/verify_imports.py
 test:
-	$(PYTHON) -m unittest discover -s tests -v
+	$(PYTHON) tools/run_tests.py
 provenance:
 	$(PYTHON) tools/build_provenance.py
 reproduce:
