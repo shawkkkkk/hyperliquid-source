@@ -112,6 +112,39 @@ class ProcessIsolationTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertFalse(list(self.tests.rglob('*.pyc')))
 
+    def test_dynamic_tool_sibling_imports_under_default_E_I(self):
+        tools = self.folder / 'tools'
+        tools.mkdir()
+        local_runner = tools / 'run_tests.py'
+        shutil.copy2(RUNNER, local_runner)
+        (tools / 'sibling_context.py').write_text('TOKEN = "sibling helper reached"\n')
+        (tools / 'entry_context.py').write_text('from sibling_context import TOKEN\n')
+        self.write('test_dynamic.py', '''
+            import importlib.util, json, os, sys, unittest
+            from pathlib import Path
+            source = Path(__file__).parents[1] / 'tools/entry_context.py'
+            spec = importlib.util.spec_from_file_location('entry_context', source)
+            entry = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(entry)
+            class DynamicTool(unittest.TestCase):
+                def test_sibling_context(self):
+                    self.assertEqual(entry.TOKEN, 'sibling helper reached')
+                    expected = json.loads(os.environ['UTISO_EXPECTED_FLAGS'])
+                    self.assertEqual(sys.flags.ignore_environment, expected[0])
+                    self.assertEqual(sys.flags.isolated, expected[1])
+                    self.assertEqual(sys.flags.optimize, 1)
+                    self.assertTrue(sys.dont_write_bytecode)
+        ''')
+        for flags, expected in [([], [0, 0]), (['-E'], [1, 0]), (['-I'], [1, 1])]:
+            with self.subTest(flags=flags):
+                result = subprocess.run(
+                    [sys.executable, '-B', '-O', *flags, str(local_runner), str(self.tests)],
+                    cwd=self.folder, capture_output=True, text=True, timeout=20,
+                    env={**os.environ, 'UTISO_EXPECTED_FLAGS': json.dumps(expected)})
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn('test_dynamic.DynamicTool.test_sibling_context', result.stderr)
+        self.assertFalse(list(self.folder.rglob('*.pyc')))
+
     def test_missing_directory_fails_and_empty_directory_keeps_standard_result(self):
         missing = self.invoke(directory=self.folder / 'missing')
         self.assertNotEqual(missing.returncode, 0)

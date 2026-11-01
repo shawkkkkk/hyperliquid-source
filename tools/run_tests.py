@@ -15,6 +15,11 @@ import sys
 
 
 VALID_MODULE = re.compile(r'[_a-z]\w*\.py$', re.IGNORECASE)
+UNITTEST_BOOTSTRAP = (
+    'import runpy, sys; '
+    'sys.path.insert(0, sys.argv.pop(1)); '
+    'runpy.run_module("unittest", run_name="__main__", alter_sys=True)'
+)
 
 
 def test_files(start):
@@ -33,13 +38,17 @@ def test_files(start):
 def run(start):
     files = test_files(start)
     # The stdlib helper also preserves -O/-B/-W/-X, as for multiprocessing.
-    python = [sys.executable, *subprocess._args_from_interpreter_flags()]
+    # Some tests load a tool by file path; its sibling imports still need the
+    # project tools directory. An explicit bootstrap also works under -E/-I,
+    # which ignore PYTHONPATH. Keep unittest's normal entry point and arguments.
+    python = [sys.executable, *subprocess._args_from_interpreter_flags(),
+              '-c', UNITTEST_BOOTSTRAP, str(Path(__file__).resolve().parent)]
     failed = 0
     # Even an empty directory keeps this interpreter's standard unittest result.
     for ordinal, path in enumerate(files or [None], 1):
         if path is not None:
             print(f'\n[{ordinal}/{len(files)}] {path.name}', file=sys.stderr, flush=True)
-        command = [*python, '-m', 'unittest', 'discover', '-s', str(start.resolve()),
+        command = [*python, 'discover', '-s', str(start.resolve()),
                    '-p', path.name if path is not None else 'test*.py', '-v']
         try:
             child = subprocess.Popen(command)
