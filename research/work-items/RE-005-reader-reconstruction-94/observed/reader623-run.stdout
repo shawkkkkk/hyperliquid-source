@@ -1,0 +1,1 @@
+PASS: Reader623; 8364/8364 exact rows in each of two builds; three source corruptions and two row-count corruptions detected; inputs unchanged

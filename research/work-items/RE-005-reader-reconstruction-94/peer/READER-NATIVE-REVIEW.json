@@ -1,0 +1,145 @@
+{
+  "PC_register_opcode_evaluation": false,
+  "actual_CIE": {
+    "admitted_in_source_script": true,
+    "raw": "1400000000000000017a5200017810011b0c070890010000",
+    "va": "0xce1518"
+  },
+  "created_utc": "2026-11-01T16:08:24.777914+00:00",
+  "derivation": {
+    "created_utc": "2026-11-01T16:19:49.928682+00:00",
+    "method": "selection of original freshly measured record; no new extraction/disassembly/run",
+    "retained_scope": "u32 Reader,u64 Reader,shared error builder623B188rows; supporting twojumptables andthree RELAs",
+    "source_receipt_sha256": "bbb9bdb2f6b5cf70619a777e00a3563b15ad503eb5cb1db41f845ddbc558db51"
+  },
+  "functions": [
+    {
+      "FDE_VA": "0xef2338",
+      "FDE_raw": "3c000000240e210010b577032501000000410e108302730e08410e104f0e08410e1002480e08410e10024e0e08410e10570e08410e10570e08410e10570e0800",
+      "argv": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386:x86-64",
+        "-M",
+        "intel",
+        "--insn-width=16",
+        "--adjust-vma=0x466d850",
+        "/tmp/hl-resume-20261101/source-peer/reader-u32.raw"
+      ],
+      "body_sha256": "2f4fb65647ac687706f7f902dd72913232d1fb05aef63a21597a4b4e907d006c",
+      "bytes": 293,
+      "end": "0x466d975",
+      "file_offset": "0x466c850",
+      "name": "reader-u32",
+      "objdump_sha256": "83554b7d7dd7dc2e5690977c5c8ea3f3beb5168559b44033c8874802206d9a6c",
+      "rows": 88,
+      "start": "0x466d850",
+      "stderr_bytes": 0
+    },
+    {
+      "FDE_VA": "0xef2378",
+      "FDE_raw": "38000000640e210000b677033c01000000410e108302730e08410e104f0e08410e1002550e08410e1002700e08410e10570e08410e10570e08000000",
+      "argv": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386:x86-64",
+        "-M",
+        "intel",
+        "--insn-width=16",
+        "--adjust-vma=0x466d980",
+        "/tmp/hl-resume-20261101/source-peer/reader-u64.raw"
+      ],
+      "body_sha256": "1f88da45c1b59f158544acc1df436cf698e6e4dcc10e960db50b102f8ae42f5b",
+      "bytes": 316,
+      "end": "0x466dabc",
+      "file_offset": "0x466c980",
+      "name": "reader-u64",
+      "objdump_sha256": "810c44b0d7d1d126984ae4dc2faac7e0340efa3812abd3fd73864b3156f3a7f5",
+      "rows": 95,
+      "start": "0x466d980",
+      "stderr_bytes": 0
+    },
+    {
+      "FDE_VA": "0xef23b4",
+      "FDE_raw": "10000000a00e210004b777030e00000000000000",
+      "argv": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i386:x86-64",
+        "-M",
+        "intel",
+        "--insn-width=16",
+        "--adjust-vma=0x466dac0",
+        "/tmp/hl-resume-20261101/source-peer/reader-error.raw"
+      ],
+      "body_sha256": "e9c285d5d073c7afed38f1407c356d1bbd68f7d91948f2527ca58b5c55e64841",
+      "bytes": 14,
+      "end": "0x466dace",
+      "file_offset": "0x466cac0",
+      "name": "reader-error",
+      "objdump_sha256": "b1f59b8e8dedb25b91fa4a42a876ed5371b7bd8eb813f662d0c406131665e060",
+      "rows": 5,
+      "start": "0x466dac0",
+      "stderr_bytes": 0
+    }
+  ],
+  "objdump_version": "GNU objdump (GNU Binutils for Debian) 2.44",
+  "profiles": "GNU bounded raw disassembly, complete bytes and FDE/actual data/RELA checks; no REA/Ghidra profile claimed",
+  "relocations": {
+    "0x57745e0": {
+      "addend": "0x466d980",
+      "file_offset": "0x1c47c8",
+      "info": 8,
+      "raw": "e045770500000000080000000000000080d9660400000000"
+    },
+    "0x57745e8": {
+      "addend": "0x466dac0",
+      "file_offset": "0x1c47e0",
+      "info": 8,
+      "raw": "e8457705000000000800000000000000c0da660400000000"
+    },
+    "0x5775138": {
+      "addend": "0x466d850",
+      "file_offset": "0x1c69d0",
+      "info": 8,
+      "raw": "3851770500000000080000000000000050d8660400000000"
+    }
+  },
+  "repository_modules_imported": false,
+  "schema": "independent-selector-reader-native-review/1",
+  "script_sha256": "ceff4b2e2f3189c0f291bf5f990d16b6891c649b90ab135c172697580d430553",
+  "source_or_target_execution": false,
+  "tables": {
+    "reader-u32": {
+      "raw": "ef69f703fc69f7037d6af703656af703",
+      "targets": [
+        "0x466d8b7",
+        "0x466d8c4",
+        "0x466d945",
+        "0x466d92d"
+      ],
+      "va": "0x6f6ec8"
+    },
+    "reader-u64": {
+      "raw": "0f6bf703296bf7031c6bf703b46bf703",
+      "targets": [
+        "0x466d9e7",
+        "0x466da01",
+        "0x466d9f4",
+        "0x466da8c"
+      ],
+      "va": "0x6f6ed8"
+    }
+  },
+  "target_bytes": 91774280,
+  "target_sha256": "3b7179cd967d1b13b683e05debfc685ad4c750e918226402d5d575eff1c0459f"
+}

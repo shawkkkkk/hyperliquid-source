@@ -1,0 +1,18 @@
+{
+  "all256DL_each_width_for_tags251252253": true,
+  "all256_tags_each_width": true,
+  "cases": 8364,
+  "corpus_sha256": "da6d136c6904f2f63505f598a6812d19b9398174b133d50a4067d918113be4e7",
+  "counts": {
+    "end": 132,
+    "ok": 7784,
+    "type": 448
+  },
+  "created_utc": "2026-11-01T16:09:07.632061+00:00",
+  "distinct_complete_inputs": 8364,
+  "expected_rows_independently_recomputed": 8364,
+  "independent_math_method": "int.from_bytes and exhaustive marker/length partition, separate from generator positional polynomial",
+  "native_receipt_sha256": "bbb9bdb2f6b5cf70619a777e00a3563b15ad503eb5cb1db41f845ddbc558db51",
+  "no_new_Rust_or_repo_module_or_target_execution": true,
+  "proof_sha256": "10d25cac06c253e120f0009ab472bd86bfbd7779da3d90e27ff706a0242375e7"
+}

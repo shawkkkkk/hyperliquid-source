@@ -1,0 +1,18 @@
+{
+  "all_rows_equal_independent_math": true,
+  "changed_wrong_neighbor_answers_do_not_change_output": true,
+  "created_utc": "2026-11-01T16:26:18.093361+00:00",
+  "distinct_complete_inputs": 90,
+  "existing_client_builds_replayed": 2,
+  "no_new_compiler_or_library_rebuild_or_captured_execution": true,
+  "observed_stdout_sha256": "c7e5f5809d7f0c67a70f6ba2e6882f60fcfa19e01798bb677446890e1bef3ccf",
+  "overlap_with_public_complete_inputs": 0,
+  "private_full_receipt_sha256": "26cb8f85368ded1923fcb9c781ff733067bf250dc4424c599ddb9f9ebf5507fe",
+  "private_input_and_expected_contents_retained_privately": true,
+  "program_sha256": "ccc80f66a7ba28b3a98f8273117d15ff7765bd90d6d0306410839fd66dcaf67f",
+  "reordering_duplicates_preserved": true,
+  "rows_per_run": 93,
+  "runs": 3,
+  "scope": "Observed source and input-only data flow, not a filesystem sandbox",
+  "status": "PASS_INDEPENDENT_PRIVATE_INPUT_ONLY_REPLAY"
+}

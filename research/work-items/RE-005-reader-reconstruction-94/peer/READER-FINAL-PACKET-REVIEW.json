@@ -1,0 +1,44 @@
+{
+  "README_sha256": "1a0a355795c0c3a593d4d1a80f2478879937421cffa532039b4c4a8d744ead69",
+  "actual_build_report_sha256": "377e1956aeb4770ba72e32c9b9fed91bdc6f3a7a78be5886d75d62f12d45bfab",
+  "actual_review_sha256": "17ee0e08392a0d8dc48fbe4df568bbd9ead5caf05faa858dfafa02cd92a39aaa",
+  "all99file_hashes_verified": true,
+  "created_utc": "2026-11-01T16:33:07.316607+00:00",
+  "four_static_checks": {
+    "all8stream_hashes_verified": true,
+    "exact_experiment_inputs_unchanged": true,
+    "head": "0d95779e941ecc06544047b831881b8f102131ae",
+    "observed_exit_codes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "reported_input_count": 9157
+  },
+  "no_new_compiler_or_repeated_test_run": true,
+  "proposed_draft_body_sha256": "25476fe5f5e565180e5b56cd481b719f906f26915312dcd5ce05fb370972cd0a",
+  "public46streams_equal_originals": true,
+  "publication_disposition": {
+    "action": "Preserve independent tested packet privately/fork branch; do not create duplicate PR. Root handling final disposition.",
+    "confirmed_open_nondraft_head": "8d95f17492d30be7cfd21eeb57f807eada155248",
+    "created_utc": "2026-11-01T16:07:40Z",
+    "new_external_overlap": "https://github.com/lalalune/hyperliquid-source/pull/1325",
+    "no_external_review_comment_message_sent": true,
+    "overlap": "same Reader623B operations and sourcecomponent on samebase"
+  },
+  "reviewed_bytes": 5277071,
+  "reviewed_files": 99,
+  "reviewed_input_manifest_sha256": "bdf8dac748009423af74f08c66640bcf12d83bae6f482ae9baf98b63019d1ba8",
+  "rights_and_claims": [
+    "root MIT and thirdparty notices byte-identical to base",
+    "all manifests/lock/source expected hashes retained; no executable/toolchain payload vendored",
+    "native623B188 rows logical projection; no targetbyte/fullABI/outerbudget/fullgate claim",
+    "pre-source distinct8364 corpus and private90inputs/93rows counted separately",
+    "Cargo/clippy/rustfmt/full expanded suite/hostedCI remain NOT_RUN, draft gap explicit",
+    "no private raw inputs/answers/clientversion in listed packet; publicsafe replay summary only",
+    "all progress/components/bytewindows and generated progress files byte-identical to base"
+  ],
+  "semantic_or_evidence_blockers": [],
+  "status": "FINAL_READER_PACKET_SCOPE_RIGHTS_AND_CLAIMS_PASS_FOR_PRESERVATION"
+}

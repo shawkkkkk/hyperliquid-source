@@ -1,0 +1,2 @@
+# Preserve exact protocol tails, raw disassembly, and actual output whitespace.
+* -text -whitespace

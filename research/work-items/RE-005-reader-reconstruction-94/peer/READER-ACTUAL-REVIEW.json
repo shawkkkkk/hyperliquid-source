@@ -1,0 +1,88 @@
+{
+  "all_source_controls_normal_full8364_rows": true,
+  "before_after": {
+    "actual_gcc_ld_hashes_equal": true,
+    "actual_pins": 7,
+    "all_pin_status_clean": true,
+    "head_status_equal_and_clean": true,
+    "provider_equal": true,
+    "provider_payloads": 103,
+    "root_physical_file_count": 9157
+  },
+  "blockers": [],
+  "commands": 23,
+  "controls": [
+    {
+      "actual_sha256": "0e59fc0413fcf978eafedffa76ea9e3c0543b7b982bbfb2617aa72dccff91c4f",
+      "mismatch_rows": 8352,
+      "name": "value",
+      "source_sha256": "c149a35a0c4b245d2e1cd85dbe33c33b4e077beb96e8bd809807f01a2f97ebff"
+    },
+    {
+      "actual_sha256": "d0bc6de1b68d69759bc53d368a7f70f84a3f7aed8a552542991e403210c8570d",
+      "mismatch_rows": 120,
+      "name": "shortage",
+      "source_sha256": "ced408604d3057759c353ddd5904ab24981d4df3608744e5e419decc8c5b7b76"
+    },
+    {
+      "actual_sha256": "93aeb950233ae8dc733021e6072c49e73ae933f41aea5feae3bfd93603f24255",
+      "mismatch_rows": 12,
+      "name": "raw-code",
+      "source_sha256": "2b56a9f1c25f6c21f0fcaedb8b3b4a0d50f10b763cee762026ca2afa7e648d3b"
+    }
+  ],
+  "corpus_review_sha256": "9a4c902d8ea7df1af4799e80dda054a858481d961a3bdbfdef09c24c278cfb68",
+  "created_utc": "2026-11-01T16:25:07.933635+00:00",
+  "normalization": "none",
+  "original_target_byte_match_claimed": false,
+  "own_rebuild_all_four_artifacts_raw_equal": true,
+  "peer_compiler_jobs": 0,
+  "prebuild_go_sha256": "0ce8d24dd91f1dd583b56f15b3d8261a035de37959c17e1d39c1e4a27f34ca02",
+  "private_replay_receipt_sha256": "26cb8f85368ded1923fcb9c781ff733067bf250dc4424c599ddb9f9ebf5507fe",
+  "private_replay_summary": "90 novel complete inputs,93 reordered/duplicate rows; both existing clients and changed wrong-neighbor answers match independent math; no rebuild",
+  "profiles": [
+    {
+      "all_exact_rows": 8364,
+      "artifacts": {
+        "evidence_vectors": "abc0938086de1fc1c7d858db5e4f4fb3af1458b86ec893741438eaa57b71df0a",
+        "libhl_bincode_varint.rlib": "488b74faa8847da36cb2a125e4cffdc2d441f3893019c10c1a63d3dc612b8648",
+        "reader_oracle": "ccc80f66a7ba28b3a98f8273117d15ff7765bd90d6d0306410839fd66dcaf67f",
+        "reader_vectors": "67e0b1479416cf5f06be9256f6525a048aadd08d4acf12f3a559da9b304c12ac"
+      },
+      "name": "build-a",
+      "new_reader_units": 3,
+      "old_units": 12,
+      "optimization": 3
+    },
+    {
+      "all_exact_rows": 8364,
+      "artifacts": {
+        "evidence_vectors": "abc0938086de1fc1c7d858db5e4f4fb3af1458b86ec893741438eaa57b71df0a",
+        "libhl_bincode_varint.rlib": "488b74faa8847da36cb2a125e4cffdc2d441f3893019c10c1a63d3dc612b8648",
+        "reader_oracle": "ccc80f66a7ba28b3a98f8273117d15ff7765bd90d6d0306410839fd66dcaf67f",
+        "reader_vectors": "67e0b1479416cf5f06be9256f6525a048aadd08d4acf12f3a559da9b304c12ac"
+      },
+      "name": "build-b",
+      "new_reader_units": 3,
+      "old_units": 12,
+      "optimization": 3
+    }
+  ],
+  "raw_streams": 46,
+  "reader_native_receipt_sha256": "a8ecd49f000a9156f8d8b5380610bf037fc133f62c5d56efc0f39868e1841ede",
+  "report_sha256": "377e1956aeb4770ba72e32c9b9fed91bdc6f3a7a78be5886d75d62f12d45bfab",
+  "rights_and_claims": [
+    "new chosen safe source MIT; root/upstream notices and existing manifest/lock unchanged",
+    "logical Reader projection only, exact623B188 native rows; ABI/padding/outerbudget/fastpath claims excluded",
+    "no captured execution or instruction evaluator",
+    "expanded fullsuite/hostedCI not claimed; all componentgates false"
+  ],
+  "row_count_controls": [
+    "extra",
+    "missing"
+  ],
+  "source_commit": "0d95779e941ecc06544047b831881b8f102131ae",
+  "source_hashes_still_equal": true,
+  "status": "ACTUAL_READER_BUILD_MATH_PROTOCOL_CONTROLS_PASS_PENDING_PUBLIC_PACKET",
+  "streams_recheck_sha256": "b61a5b54b27348949c101c6d3dd8903c5dfc4320005913fe98d912d90bdf4f94"
+}

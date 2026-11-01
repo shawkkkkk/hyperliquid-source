@@ -1,0 +1,353 @@
+[
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--crate-name=hl_bincode_varint",
+      "--crate-type=rlib",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/src/lib.rs",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/libhl_bincode_varint.rlib"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/library"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/examples/reader_oracle.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/runner-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/corpus"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--test",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/tests/evidence_vectors.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/evidence_vectors"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/evidence_vectors-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/evidence_vectors",
+      "--test-threads=1"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/evidence_vectors-run"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--test",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/tests/reader_vectors.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_vectors"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_vectors-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_vectors",
+      "--test-threads=1"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-a/reader_vectors-run"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--crate-name=hl_bincode_varint",
+      "--crate-type=rlib",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/src/lib.rs",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/libhl_bincode_varint.rlib"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/library"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/examples/reader_oracle.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/runner-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/corpus"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--test",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/tests/evidence_vectors.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/evidence_vectors"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/evidence_vectors-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/evidence_vectors",
+      "--test-threads=1"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/evidence_vectors-run"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--test",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/tests/reader_vectors.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_vectors"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_vectors-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_vectors",
+      "--test-threads=1"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/build-b/reader_vectors-run"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--crate-name=hl_bincode_varint",
+      "--crate-type=rlib",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/value.rs",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/libhl_bincode_varint.rlib"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/library"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/examples/reader_oracle.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/runner-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-value/corpus"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--crate-name=hl_bincode_varint",
+      "--crate-type=rlib",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/shortage.rs",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/libhl_bincode_varint.rlib"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/library"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/examples/reader_oracle.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/runner-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-shortage/corpus"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "--crate-name=hl_bincode_varint",
+      "--crate-type=rlib",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/raw-code.rs",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/libhl_bincode_varint.rlib"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/library"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/toolchain/prefix/bin/rustc",
+      "--edition=2024",
+      "--target=x86_64-unknown-linux-gnu",
+      "-Dwarnings",
+      "-Copt-level=3",
+      "-Ccodegen-units=1",
+      "-Cdebuginfo=0",
+      "-Clinker=/usr/bin/gcc",
+      "-Clink-arg=-fuse-ld=bfd",
+      "/tmp/hl-resume-20261101/readers/src/bincode-varint/examples/reader_oracle.rs",
+      "--extern",
+      "hl_bincode_varint=/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/libhl_bincode_varint.rlib",
+      "-o",
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/runner-build"
+  },
+  {
+    "argv": [
+      "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/reader_oracle"
+    ],
+    "exit_code": 0,
+    "log_stem": "/tmp/hl-resume-20261101/readers/work/reader623-validation/control-raw-code/corpus"
+  }
+]

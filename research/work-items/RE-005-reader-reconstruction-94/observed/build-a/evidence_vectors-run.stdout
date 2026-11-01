@@ -1,0 +1,17 @@
+
+running 12 tests
+test decoder_does_not_guess_slow_path_truncation_semantics ... ok
+test decoder_fast_path_accepts_non_minimal_widths ... ok
+test decoder_rejects_observed_error_markers ... ok
+test decoder_vectors_match_observed_loads_and_consumed_lengths ... ok
+test encoders_append_without_replacing_existing_output ... ok
+test independent_marker_corruption_control_changes_the_result ... ok
+test u32_big_endian_vectors_match_target_swap_arms ... ok
+test u32_lengths_follow_observed_thresholds ... ok
+test u32_little_endian_vectors_match_target_stores ... ok
+test u64_big_endian_vectors_match_target_swap_arms ... ok
+test u64_lengths_follow_observed_thresholds ... ok
+test u64_little_endian_vectors_cover_width_and_overflow_boundaries ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

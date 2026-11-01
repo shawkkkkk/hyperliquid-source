@@ -1,0 +1,46 @@
+{
+  "blockers": [],
+  "created_utc": "2026-11-01T16:13:01.961792+00:00",
+  "native_review_sha256": "bbb9bdb2f6b5cf70619a777e00a3563b15ad503eb5cb1db41f845ddbc558db51",
+  "no_compiler_run_by_peer": true,
+  "no_full_component_gate_or_original_identity_claim": true,
+  "reviewed_relation": [
+    "alltag partition",
+    "emptyneed1 consumes0",
+    "tagfirst beforeallpresenterrors",
+    "shortpayload needtotal-originallen leavespayload",
+    "success consumes3/5/9; everyDLnonzero big",
+    "u32expected2 and u64expected3 rawfound3/4/12",
+    "fulltail input-onlystdout bridge",
+    "sequentialread/pointeradvance units",
+    "base fast/encoding implementation unchanged",
+    "manifestlockunchanged; directrustc can compile real existing stdcomponent withoutcargo registry"
+  ],
+  "source_files": {
+    "src/bincode-varint/Cargo.lock": {
+      "bytes": 161,
+      "sha256": "963f32e54bf1d7ba345e383184b5516162a6cb3b1063c91bf61f7b5c2815345c"
+    },
+    "src/bincode-varint/Cargo.toml": {
+      "bytes": 243,
+      "sha256": "fc634395ea9e215282c5662b66a03cd128cebae4bf4f238482e213adbf95eefb"
+    },
+    "src/bincode-varint/README.md": {
+      "bytes": 7005,
+      "sha256": "f62395290400a393a820511bcf2480faeeac53512b5d9b68a28054fb3638cd4e"
+    },
+    "src/bincode-varint/examples/reader_oracle.rs": {
+      "bytes": 2844,
+      "sha256": "c45d2b9e7eba4d7a0eb15da78b685cd5741acbbb6d7132ea4035b1387e61ff68"
+    },
+    "src/bincode-varint/src/lib.rs": {
+      "bytes": 10778,
+      "sha256": "c36b803002df599caf92e36744240f753ce160138d8a895855d5fbcd1f54a947"
+    },
+    "src/bincode-varint/tests/reader_vectors.rs": {
+      "bytes": 1698,
+      "sha256": "b74970b2bb659081bf4695040002b77808074c238e97bb4518da3a2dfe0bc37b"
+    }
+  },
+  "status": "SOURCE_AND_CLIENT_RELATION_PASS_RUNNER_REVIEW_PENDING"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "archive": "rust-std-1.94.1-x86_64-unknown-linux-gnu.tar.xz",
+    "sha256": "74109ee2c19098f1d7122087dd338a8f643203b3ce678c9d58169db733e17a03",
+    "members": 81,
+    "scripts": [
+      "rust-std-1.94.1-x86_64-unknown-linux-gnu/install.sh"
+    ],
+    "links": []
+  },
+  {
+    "archive": "rustc-1.94.1-x86_64-unknown-linux-gnu.tar.xz",
+    "sha256": "0a6b16ca476461c6238f48efcb74a7aa08a3983e61adf587f208ba48504d87e1",
+    "members": 70,
+    "scripts": [
+      "rustc-1.94.1-x86_64-unknown-linux-gnu/install.sh"
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "blockers": [],
+  "created_utc": "2026-11-01T16:17:09.321794+00:00",
+  "execution_scope": "Exact reviewed scoped runner only; root owns one-heavy-job sequencing, expanded fullsuite not authorized",
+  "files": {
+    "research/work-items/RE-005-reader-reconstruction-94/reproduce.py": "2c363da9b19ae7f79302e32616654ef5a87ac572a2a4a19014fc66e0a34b1eb3",
+    "src/bincode-varint/tests/evidence_vectors.rs": "2fc1ee50bb8a03b31bc87d1c0cd834dbad7e387b03c3aae38f9d161612e0f037"
+  },
+  "initial_source_review_sha256": "5afac120cc43c58c3bf75b2293525ea270cd305ca395839440c87d4482cd0aad",
+  "math_corpus_review_sha256": "9a4c902d8ea7df1af4799e80dda054a858481d961a3bdbfdef09c24c278cfb68",
+  "native_review_sha256": "bbb9bdb2f6b5cf70619a777e00a3563b15ad503eb5cb1db41f845ddbc558db51",
+  "no_target_or_emulator_or_privateABI_or_fullgate_claim": true,
+  "peer_builds_run": 0,
+  "runner_review": [
+    "full target/source/corpus identities admitted beforebuild",
+    "hard pinned provider audit and103payloads; exactcompilerpath/-vV",
+    "resolved gcc+ld.bfd hashed/versioned; explicitbfd linkerselection",
+    "real existing stdcomponent manifestlock unchanged, directrustc noCargo/hooks/stubs",
+    "8364 strict fullbyte outputs checked eachproductionbuild and complete8364rows required everysemanticmutant",
+    "two ownopt3builds with2realintegrationtestbinaries each; no targetbyteidentityclaim",
+    "incremental exactcommands and rawstdout/stderr saved before failurechecks",
+    "three source corruptions+two rowcountcontrols",
+    "beforeafter roottracked+newfiles/head/status,7actualpinsclean,providerpayloads andhosttoolhashes",
+    "no source expectedanswers clientdataflow; input-onlystdin"
+  ],
+  "source_hashes_still_equal": true,
+  "status": "PREBUILD_NATIVE_MATH_SOURCE_CLIENT_RUNNER_GO"
+}
